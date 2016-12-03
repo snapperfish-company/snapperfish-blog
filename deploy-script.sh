@@ -2,7 +2,7 @@
 # See https://medium.com/@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db
 set -o errexit
 
-rm -rf public
+# rm -rf public
 
 # config
 # git config --global user.email "nobody@nobody.org"
