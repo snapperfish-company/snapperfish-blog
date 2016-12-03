@@ -17,6 +17,6 @@ cd $TRAVIS_BUILD_DIR/public
 git init
 git add .
 git commit -m "Deploy to Github Pages"
-git remote add origin https://chrisslater:${GH_TOKEN}@github.com/username/repo.git
+git remote add origin https://chrisslater:${GH_TOKEN}@github.com/snapperfish-company/snapperfish-company.github.io.git
 git push -fq origin master
 # git push --force "https://${GH_TOKEN}@github.com/snapperfish-company/snapperfish-company.github.io.git" master:master > /dev/null 2>&1
