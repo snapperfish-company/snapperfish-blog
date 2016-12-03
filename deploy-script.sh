@@ -12,7 +12,8 @@ set -o errexit
 # npm run build
 
 # deploy
-cd public
+ls $TRAVIS_BUILD_DIR
+cd $TRAVIS_BUILD_DIR/public
 git init
 git add .
 git commit -m "Deploy to Github Pages"
