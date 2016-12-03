@@ -40,7 +40,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "$(npm bin)/gatsby build",
     "xdeploy": "gatsby build --prefix-links && gh-pages -d public",
     "deploy": "node ./deploy.js",
     "develop": "gatsby develop",
