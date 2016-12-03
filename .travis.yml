@@ -5,6 +5,7 @@ env:
   - export NODE_VERSION="0.12"
   - export NODE_VERSION="4"
   - export NODE_VERSION="5"
+  - export NODE_VERSION="6"
 os:
   - linux
   - osx
