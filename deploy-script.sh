@@ -5,8 +5,8 @@ set -o errexit
 # rm -rf public
 
 # config
-# git config --global user.email "nobody@nobody.org"
-# git config --global user.name "Travis CI"
+git config --global user.email "travis@snapper.fish"
+git config --global user.name "Travis CI"
 
 # build (CHANGE THIS)
 # npm run build
