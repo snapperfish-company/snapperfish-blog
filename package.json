@@ -40,9 +40,14 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public",
+    "build": "$(npm bin)/gatsby build",
+    "xdeploy": "gatsby build --prefix-links && gh-pages -d public",
+    "deploy": "node ./deploy.js",
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   }
 }
