@@ -35,4 +35,6 @@ addons:
 script:
   - npm install
   - npm run build
+
+after_success:
   - npm run deploy
