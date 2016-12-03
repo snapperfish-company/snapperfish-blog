@@ -3,7 +3,6 @@
 set -o errexit
 
 rm -rf public
-mkdir public
 
 # config
 # git config --global user.email "nobody@nobody.org"
@@ -17,4 +16,4 @@ cd public
 git init
 git add .
 git commit -m "Deploy to Github Pages"
-git push --force --quiet "https://d1746a843f19be67690f16b812790c7ddcea2fcd@github.com:snapperfish-company/snapperfish-company.github.io.git" master:master > /dev/null 2>&1
+git push --force --quiet "https://${GH_TOKEN}@github.com/snapperfish-company/snapperfish-company.github.io.git" master:master > /dev/null 2>&1

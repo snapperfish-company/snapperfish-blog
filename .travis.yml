@@ -1,12 +1,10 @@
 # back to language cpp to try to bypass osx node failure
-language: cpp
+language: node_js
+node_js:
+  - '6'
+
 sudo: false
-env:
-  # - export NODE_VERSION="4"
-  - export NODE_VERSION="6"
-os:
-  # - linux
-  - osx
+
 # pre-install to bring in the correct version of node via nvm
 before_install:
   - git submodule update --init --recursive
@@ -40,5 +38,10 @@ branches:
   only:
   - master
 
-after_success:
-  - npm run deploy
+deploy:
+  provider: script
+  script: ./deploy-script.sh
+  on:
+    branch: master
+    node: '6'
+
