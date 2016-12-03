@@ -9,7 +9,7 @@ rm -rf public
 # git config --global user.name "Travis CI"
 
 # build (CHANGE THIS)
-npm run build
+# npm run build
 
 # deploy
 cd public
