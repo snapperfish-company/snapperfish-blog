@@ -17,4 +17,5 @@ cd $TRAVIS_BUILD_DIR/public
 git init
 git add .
 git commit -m "Deploy to Github Pages"
-git push --force --quiet "https://chrisslater:${GH_TOKEN}@github.com/snapperfish-company/snapperfish-company.github.io" master:master > /dev/null 2>&1
+# git push --force --quiet "https://${GH_TOKEN}@github.com/snapperfish-company/snapperfish-company.github.io" master:master > /dev/null 2>&1
+git push --force "https://chrisslater:ada9811809a7ade7452efeb53c6d292dca2578b4@github.com/snapperfish-company/snapperfish-company.github.io" master:master
