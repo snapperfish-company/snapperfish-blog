@@ -46,6 +46,7 @@ if [ -n "$TRAVIS_BUILD_ID" ]; then
       ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
       REPO=${REPO/git:\/\/github.com\//git@github.com:}
 
+      echo "Decrypting..."
       # The `deploy_key.enc` file should have been added to the repo and should
       # have been created from the deploy private key using `travis encrypt-file`
       openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
@@ -59,6 +60,7 @@ if [ -n "$TRAVIS_BUILD_ID" ]; then
   fi
 fi
 
+echo "Deploying..."
 REPO_NAME=$(basename $REPO)
 TARGET_DIR=$(mktemp -d /tmp/$REPO_NAME.XXXX)
 REV=$(git rev-parse HEAD)
