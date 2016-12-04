@@ -5,6 +5,7 @@ import { prefixLink } from 'gatsby-helpers';
 import { config } from 'config';
 import * as sortBy from 'lodash/sortBy';
 import access = require('safe-access');
+import includes = require('core-js/library/fn/string/includes');
 
 type Page = {
   path: string;
@@ -48,7 +49,7 @@ export default class Index extends React.Component<Props, undefined> {
   }
 
   protected renderPageLink(page: Page): JSX.Element {
-    if (access(page, 'file.ext') === 'md' && !page.path.includes('/404')) {
+    if (access(page, 'file.ext') === 'md' && !includes(page.path, '/404')) {
       const title = access(page, 'data.title') || page.path;
       return (
         <li
