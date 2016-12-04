@@ -51,7 +51,7 @@ deploy:
 
 env:
   global:
-    - ENCRYPTION_LABEL="travis@travis-ci.org"
+    - ENCRYPTION_LABEL="69d732fbdaa9"
     - GIT_NAME="Travis_CI"
     - GIT_EMAIL="travis-ci@snapper.fish"
     - DEPLOY_BRANCH="master"
