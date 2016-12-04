@@ -20,12 +20,14 @@
     "react-helmet": "^3.2.2",
     "react-responsive-grid": "^0.3.3",
     "react-typography": "^0.15.0",
+    "safe-access": "^0.1.0",
     "toml-js": "0.0.8",
     "typescript": "^2.0.10",
     "typography": "^0.15.0",
     "typography-plugin-code": "^0.15.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.41",
     "@types/node": "^0.0.2",
     "@types/react": "^0.14.52",
     "@types/react-helmet": "^0.0.25",

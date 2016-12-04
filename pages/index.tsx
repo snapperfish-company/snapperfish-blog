@@ -3,64 +3,61 @@ import * as Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { config } from 'config';
+import * as sortBy from 'lodash/sortBy';
+import access = require('safe-access');
 
-export default class Index extends React.Component<undefined, undefined> {
-  public render () {
+type Page = {
+  path: string;
+};
+
+type Pages = Page[];
+
+type Route = {
+  pages: Pages;
+};
+
+type Props = {
+  route: Route;
+};
+
+export default class Index extends React.Component<Props, undefined> {
+  public render() {
     const meta = [
       { content: 'Sample', name: 'description' },
       { content: 'sample, something', name: 'keywords' },
-    ]
+    ];
+
+    const pageLinks = this.renderPageLinks(this.props.route.pages);
+
     return (
       <div>
         <Helmet
           title={config.siteTitle}
           meta={meta}
         />
-        <h1>
-          Hi people
-        </h1>
-        <p>Welcome to your new Gatsby site</p>
-        <h2>Below are some pages showing different capabilities built-in to Gatsby</h2>
-        <h3>Supported file types</h3>
-        <ul>
-          <li>
-            <Link to={prefixLink('/markdown/')}>Markdown</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/react/')}>JSX (React components)</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/coffee-react/')}>CJSX (Coffeescript React components)</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/html/')}>HTML</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/json/')}>JSON</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/yaml/')}>YAML</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/toml/')}>TOML</Link>
-          </li>
-        </ul>
-        <h3>Supported CSS processors</h3>
-        <ul>
-          <li>
-            <Link to={prefixLink('/postcss/')}>PostCSS</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/css-modules/')}>CSS Modules</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/sass/')}>Sass</Link>
-          </li>
-          <li>
-            <Link to={prefixLink('/less/')}>Less</Link>
-          </li>
-        </ul>
+        {pageLinks}
       </div>
     );
+  }
+
+  protected renderPageLinks(pages: Pages): JSX.Element[] {
+    const sortedPages: Pages = sortBy(pages, (page) =>
+      access(page, 'data.date'),
+    ).reverse();
+    return sortedPages.map(this.renderPageLink);
+  }
+
+  protected renderPageLink(page: Page): JSX.Element {
+    if (access(page, 'file.ext') === 'md' && !page.path.includes('/404')) {
+      const title = access(page, 'data.title') || page.path;
+      return (
+        <li
+          key={page.path}
+        >
+          <Link style={{boxShadow: 'none'}} to={prefixLink(page.path)}>{title}</Link>
+        </li>
+      );
+    }
+    return undefined;
   }
 }
