@@ -18,4 +18,4 @@ git init
 git add .
 git commit -m "Deploy to Github Pages"
 # git push --force --quiet "https://${GH_TOKEN}@github.com/snapperfish-company/snapperfish-company.github.io" master:master > /dev/null 2>&1
-git push --force "https://chrisslater:a4f340d715ca4093666a80d093a9672920ac034eb@github.com/snapperfish-company/snapperfish-company.github.io.git" master:master
+git push --force "https://chrisslater:bb6b8163fdaab3454fbe7e295b8431bf073d2ec8@github.com/snapperfish-company/snapperfish-company.github.io.git" master:master
