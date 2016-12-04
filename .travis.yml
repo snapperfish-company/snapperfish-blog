@@ -35,7 +35,7 @@ before_install: openssl aes-256-cbc -K $encrypted_69d732fbdaa9_key -iv $encrypte
 script:
   - npm run build
   - git remote rm origin
-  - git remote add origin https://git@github.com:snapperfish-company/snapperfish-company.github.io.git
+  - git remote add origin git@github.com:snapperfish-company/snapperfish-company.github.io.git
 
 branches:
   only:
