@@ -31,3 +31,6 @@ node_modules
 .DS_Store
 
 public
+
+deploy_key
+deploy_key.pub
