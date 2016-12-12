@@ -1,0 +1,23 @@
+@import '../../css/variables';
+
+.logo {
+  text-align: center;
+}
+
+.logo_image {
+  vertical-align: middle;
+  width: 50px;
+  margin: 0;
+  display: inline-block;
+}
+
+.logo_strap {
+  display: inline-block;
+  padding: 5px 10px;
+  color: $color_icon_primary;
+  // background-color: $color_accent;
+  background-color: $color_primary;
+  margin: 0;
+  margin-left: 20px;
+  vertical-align: middle;
+}

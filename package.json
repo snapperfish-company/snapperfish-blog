@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@types/classnames": "^0.0.32",
+    "classnames": "^2.2.5",
     "core-js": "^2.4.1",
     "front-matter": "^2.1.1",
     "gatsby": "^0.12.20",

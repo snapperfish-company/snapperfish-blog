@@ -1,0 +1,29 @@
+@import '../../css/variables';
+
+.self {
+  margin-top: 60px;
+}
+
+.isFirst {
+  margin-top: 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.title_link {
+  color: $color_primary;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.title_link:hover {
+  color: $color_accent;
+}
+
+.date {
+  display: block;
+  color: $color_text_secondary;
+  margin-bottom: $spacing_margin;
+}

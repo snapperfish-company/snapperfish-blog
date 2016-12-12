@@ -1,5 +1,5 @@
 declare module 'safe-access' {
-  function access(obj: Object, str:string): Object;
+  function access(obj: Object, str:string): any;
   export = access;
 }
 
