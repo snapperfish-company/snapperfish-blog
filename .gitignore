@@ -34,3 +34,7 @@ public
 
 deploy_key
 deploy_key.pub
+
+.nyc_output
+
+dist/

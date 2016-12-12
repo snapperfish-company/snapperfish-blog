@@ -5,8 +5,11 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@types/classnames": "^0.0.32",
+    "@types/enzyme": "^2.5.39",
+    "ava": "^0.17.0",
     "classnames": "^2.2.5",
     "core-js": "^2.4.1",
+    "enzyme": "^2.6.0",
     "front-matter": "^2.1.1",
     "gatsby": "^0.12.20",
     "highlight.js": "^9.8.0",
@@ -18,6 +21,7 @@
     "markdown-it-deflist": "^2.0.1",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-sub": "^1.0.0",
+    "nyc": "^10.0.0",
     "object-assign": "^4.1.0",
     "react-headroom": "^2.1.2",
     "react-helmet": "^3.2.2",
@@ -35,6 +39,7 @@
     "@types/react": "^0.14.52",
     "@types/react-helmet": "^0.0.25",
     "@types/react-router": "^2.0.41",
+    "react-addons-test-utils": "^15.4.1",
     "tslint": "^4.0.2",
     "tslint-react": "^2.0.0"
   },
@@ -43,12 +48,19 @@
   ],
   "license": "MIT",
   "main": "n/a",
+  "ava": {
+    "files": [
+      "dist/tests/**/__tests__/**/*.test.js"
+    ]
+  },
   "scripts": {
     "build": "$(npm bin)/gatsby build",
     "xdeploy": "gatsby build --prefix-links && gh-pages -d public",
     "deploy": "node ./deploy.js",
     "develop": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:test": "tsc -p tsconfig.test.json",
+    "test": "nyc ava",
+    "test:report": "nyc report --reporter=html"
   },
   "peerDependencies": {
     "react": "^15.4.1",

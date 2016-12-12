@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "./components",
+    "outDir": "./dist/tests",
+    "inlineSourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "declaration": false
+  },
+  "exclude": [
+      "node_modules"
+  ]
+}
