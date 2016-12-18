@@ -29,11 +29,12 @@
     "react-typography": "^0.15.0",
     "safe-access": "^0.1.0",
     "toml-js": "0.0.8",
-    "typescript": "^2.0.10",
+    "typescript": "^2.1.4",
     "typography": "^0.15.0",
     "typography-plugin-code": "^0.15.0"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.35",
     "@types/lodash": "^4.14.41",
     "@types/node": "^0.0.2",
     "@types/react": "^0.14.52",
@@ -58,8 +59,9 @@
     "xdeploy": "gatsby build --prefix-links && gh-pages -d public",
     "deploy": "node ./deploy.js",
     "develop": "gatsby develop",
-    "build:test": "tsc -p tsconfig.test.json",
+    "build:test": "tsc -w -p tsconfig.test.json",
     "test": "nyc ava",
+    "test:watch": "nyc ava -w",
     "test:report": "nyc report --reporter=html"
   },
   "peerDependencies": {

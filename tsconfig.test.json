@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "./components",
+    "rootDir": ".",
     "outDir": "./dist/tests",
     "inlineSourceMap": true,
     "noImplicitAny": true,
@@ -8,8 +8,5 @@
     "target": "es5",
     "jsx": "react",
     "declaration": false
-  },
-  "exclude": [
-      "node_modules"
-  ]
+  }
 }
