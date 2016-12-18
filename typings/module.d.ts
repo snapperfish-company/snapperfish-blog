@@ -10,6 +10,7 @@ declare module 'gatsby-helpers' {
 
 interface Config {
   siteTitle: string;
+  copyright: string;
 }
 
 declare module 'config' {

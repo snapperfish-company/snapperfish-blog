@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
 import { config } from 'config';
-import * as sortBy from 'lodash/sortBy';
+import sortBy = require('lodash/sortBy');
 import access = require('safe-access');
+import includes = require('core-js/library/fn/string/includes');
+import { Teaser } from '../components/Teaser/Teaser';
 
 type Page = {
   path: string;
@@ -41,21 +41,30 @@ export default class Index extends React.Component<Props, undefined> {
   }
 
   protected renderPageLinks(pages: Pages): JSX.Element[] {
-    const sortedPages: Pages = sortBy(pages, (page) =>
+    const filteredPages = pages.filter((page) => access(page, 'file.dir') === 'posts');
+    const sortedPages: Pages = sortBy(filteredPages, (page) =>
       access(page, 'data.date'),
     ).reverse();
-    return sortedPages.map(this.renderPageLink);
+    return sortedPages.map((page, key) => (
+      <div key={page.path} className='teaser'>
+        {this.renderPageLink(page, key === 0)}
+      </div>
+    ));
   }
 
-  protected renderPageLink(page: Page): JSX.Element {
-    if (access(page, 'file.ext') === 'md' && !page.path.includes('/404')) {
-      const title = access(page, 'data.title') || page.path;
+  protected renderPageLink(page: Page, isFirst: boolean): JSX.Element {
+    if (access(page, 'file.ext') === 'md' && !includes(page.path, '/404')) {
+      const title: string = access(page, 'data.title') || page.path;
+      const teaser: string = access(page, 'data.teaser');
+      const date: string = access(page, 'data.date');
       return (
-        <li
-          key={page.path}
-        >
-          <Link style={{boxShadow: 'none'}} to={prefixLink(page.path)}>{title}</Link>
-        </li>
+        <Teaser
+          title={title}
+          teaser={teaser}
+          date={date}
+          path={page.path}
+          isFirst={isFirst}
+        />
       );
     }
     return undefined;
