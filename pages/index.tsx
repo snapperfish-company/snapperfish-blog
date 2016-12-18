@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
 import { config } from 'config';
-import * as sortBy from 'lodash/sortBy';
+import sortBy = require('lodash/sortBy');
 import access = require('safe-access');
 import includes = require('core-js/library/fn/string/includes');
 import { Teaser } from '../components/Teaser/Teaser';
