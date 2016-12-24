@@ -1,0 +1,12 @@
+{
+  "extends": [ "tslint:latest", "tslint-react" ],
+  "rules": {
+    "interface-name": [false, "always-prefix"],
+    "quotemark": [true, "single"],
+    "ordered-imports": [ false ],
+    "semicolon": [true, "never"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+
+    "jsx-curly-spacing": ["always"]
+  }
+}
