@@ -32,7 +32,7 @@ const Header = (props, { metadata: { pkg } }) => (
         {
           pkg.repository &&
           <a
-            href={ pkg.repository }
+            href={ pkg.github }
             className={ styles.link }
           >
             <Svg svg={ gitHubSvg } cleanup />

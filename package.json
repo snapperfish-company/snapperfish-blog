@@ -3,6 +3,7 @@
   "name": "snapperfish",
   "homepage": "https://snapper.fish",
   "twitter": "chrisontheside",
+  "github": "https://github.com/chrisslater",
   "repository": "https://github.com/snapperfish-company/snapperfish-blog",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
