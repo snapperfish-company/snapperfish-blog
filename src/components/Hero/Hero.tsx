@@ -11,7 +11,8 @@ export interface CTAProps {
 
 interface Image {
   url: string
-  gradient: boolean
+  gradient?: boolean
+  height?: string
 }
 
 interface Props {
@@ -39,6 +40,7 @@ const Hero: React.StatelessComponent<Props> = ({ title, image, cta }) => {
 
   let heroStyles
   let gradient = false
+  let height;
 
   if (image) {
     let url = image
@@ -46,10 +48,15 @@ const Hero: React.StatelessComponent<Props> = ({ title, image, cta }) => {
     if (typeof image !== 'string') {
       url = image.url
       gradient = image.gradient
+      height = image.height;
     }
 
     heroStyles = {
       background: `#111 url(${ url }) 50% 50% / cover`,
+    }
+
+    if (height) {
+      heroStyles.height = height;
     }
   }
 
