@@ -15,7 +15,10 @@ interface Context {
 const Posts: React.StatelessComponent<Props> = (props, { collection }: Context) => {
   const styles = require('./index.css')
   const posts = enhanceCollection(collection, {
-    filter: { layout: 'Post' },
+    filter: { 
+      layout: 'Post',
+      //publishInFeed: true,
+    },
     reverse: true,
     sort: 'date',
   })

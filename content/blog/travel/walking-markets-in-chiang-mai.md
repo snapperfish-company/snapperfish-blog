@@ -3,6 +3,7 @@ title: Walking Markets in Chiang Mai
 metaTitle: Walking Markets, Chiang Mai
 date: 2017-01-10
 layout: Post
+publishInFeed: true
 hero: 
     url: /assets/travel/chiang-mai/walking-market.jpg
     height: 410px
@@ -46,4 +47,6 @@ And the snacks to munch on while looking around the stalls aren't half bad eithe
 
 ![Sticky rice on a stick, Chiang Mai](/assets/travel/chiang-mai/sticky-rice-on-a-stick.jpg)
 
-Lisa was especially successful on one of the nights and impressesd me with her natural talent for batering her herself a dress and bracelet for a bargin price.
+Lisa was especially successful on one of the nights 
+and impressesd me with her natural talent for batering 
+her herself a dress and bracelet for a bargin price.
