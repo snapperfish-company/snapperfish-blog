@@ -1,5 +1,6 @@
 ---
 title: Wat Pho and Reclining Buddha, our first day in Bangkok
+description: A days exploration of Bankok from Giant Swings to Giant Reclining Buddha statues
 date: 2017-01-09
 layout: Post
 publishInFeed: true

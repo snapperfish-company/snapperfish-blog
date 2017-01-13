@@ -1,6 +1,7 @@
 ---
 title: Walking Markets in Chiang Mai
 metaTitle: Walking Markets, Chiang Mai
+description: Exploring the Walking Markets in the Old Town of Chiang Mai
 date: 2017-01-10
 layout: Post
 publishInFeed: true
