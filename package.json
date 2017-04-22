@@ -124,7 +124,7 @@
     "react-dom": "^15.0.0-rc.1",
     "react-helmet": "^3.0.0",
     "react-hot-loader": "^3.0.0-beta",
-    "react-redux": "^4.0.0",
+    "react-redux": "^5.0.2",
     "react-router": "^2.3.0",
     "react-svg-inline": "^1.1.0",
     "react-topbar-progress-indicator": "^1.0.0",
