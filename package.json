@@ -119,7 +119,7 @@
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.13.0",
     "postcss-reporter": "^1.3.0",
-    "raw-loader": "^0.5.1",
+    "raw-loader": "^3.0.0",
     "react": "^15.0.0-rc.1",
     "react-dom": "^15.0.0-rc.1",
     "react-helmet": "^3.0.0",
